@@ -2,12 +2,13 @@ package com.tis.mx.application.service.impl;
 
 import java.util.ArrayList;
 import java.util.List;
+import org.springframework.stereotype.Service;
 import com.tis.mx.application.dto.InitialInvestmentDto;
 import com.tis.mx.application.dto.InvestmentYieldDto;
 import com.tis.mx.application.service.CompoundInterestCalculator;
 import lombok.AllArgsConstructor;
 
-
+@Service
 public class CompoundIntererstCalculatorImpl implements CompoundInterestCalculator{
 
   @Override
