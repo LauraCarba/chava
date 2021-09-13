@@ -31,7 +31,7 @@ public interface CompoundInterestCalculator {
  * @return the list
  */
 //createRevenueGrid();
-  List<InvestmentYieldDto>createRevenueGrid(InitialInvestmentDto initialInvestment);
+  List<InvestmentYieldDto> createRevenueGrid(InitialInvestmentDto initialInvestment);
   
   /**
    * Validate input.

@@ -22,12 +22,14 @@ import java.util.List;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestHeader;
+import org.springframework.web.bind.annotation.RestController;
 
 
 
 /**
  * The Class AplicationController.
  */
+@RestController
 public class AplicationController {
   
   
@@ -56,7 +58,7 @@ public class AplicationController {
   @PostMapping(value= "/api/v1/investors/calculator/ci")
   public List<InvestmentYieldDto> createTableYield(
       
-    @RequestHeader(value="Context-Type",required = false)String contentType,
+    @RequestHeader(value="Content-Type",required = false)String contentType,
     @RequestBody InitialInvestmentDto initialInvestment){
     
     if (calculator.validateInput(initialInvestment)) {

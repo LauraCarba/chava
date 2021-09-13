@@ -1,14 +1,38 @@
+/* 
+* This program is free software: you can redistribute it and/or modify  
+* it under the terms of the GNU General Public License as published by  
+* the Free Software Foundation, version 3.
+*
+* This program is distributed in the hope that it will be useful, but 
+* WITHOUT ANY WARRANTY; without even the implied warranty of 
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU 
+* General Public License for more details.
+*
+* Nombre de archivo: GlobalExeptionHandler.java
+* Autor: lcarbaja
+* Fecha de creación: 11 sep. 2021
+*/
+
 package com.tis.mx.infraestructure.exception;
 
+import com.tis.mx.application.controller.CalculatorInputException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
-import com.tis.mx.application.controller.CalculatorInputException;
 
+/**
+ * The Class GlobalExeptionHandler.
+ */
 @ControllerAdvice
 public class GlobalExeptionHandler {
   
+  /**
+   * Bad request.
+   *
+   * @param calculatorInputException the calculator input exception
+   * @return the response entity
+   */
   @ExceptionHandler({CalculatorInputException.class})
   public ResponseEntity<ErrorResponse> badRequest(
       CalculatorInputException calculatorInputException) {

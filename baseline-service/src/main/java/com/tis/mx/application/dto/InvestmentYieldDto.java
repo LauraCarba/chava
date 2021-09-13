@@ -8,10 +8,10 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 public class InvestmentYieldDto {
-  public int investmentYear;//año de la inversion
-  public double initialInvestment;//inversion inicial
-  public double yearInput;//entrada anual
-  public double investmentYield;//rendimiento de la inversion
-  public double finalBalance;//balance final
+  private Integer investmentYear;//año de la inversion
+  private Double initialInvestment;//inversion inicial
+  private Double yearInput;//entrada anual
+  private Double investmentYield;//rendimiento de la inversion
+  private Double finalBalance;//balance final
 
 }

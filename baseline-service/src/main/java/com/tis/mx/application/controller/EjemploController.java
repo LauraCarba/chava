@@ -9,6 +9,6 @@ public class EjemploController {
   
   @GetMapping(value= "/mensaje")
   public String getMessage() {
-    return "HolaMundo!!";
+    return "HolaMundo!!"; 
   }
 }

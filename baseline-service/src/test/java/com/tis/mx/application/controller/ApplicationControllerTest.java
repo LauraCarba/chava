@@ -17,7 +17,7 @@ package com.tis.mx.application.controller;
 
 import static org.junit.Assert.assertEquals;
 import java.util.List;
-import javax.sql.rowset.FilteredRowSet;
+//import javax.sql.rowset.FilteredRowSet;
 import org.junit.Before;
 import org.junit.Test;
 import com.tis.mx.application.dto.InitialInvestmentDto;
@@ -50,6 +50,7 @@ private CompoundInterestCalculator calculator;
     
     this.calculator=new CompoundIntererstCalculatorImpl();
     //creo controlador
+    this.controller = new AplicationController(this.calculator);
     this.initialInvestmentDto=new InitialInvestmentDto();
     //Crear los valores iniciales de la inversion
    
@@ -57,7 +58,7 @@ private CompoundInterestCalculator calculator;
     this.initialInvestmentDto.setYearlyInput(Double.valueOf(3000.00));
     this.initialInvestmentDto.setYearlyInputIncrement(Integer.valueOf(1));
     this.initialInvestmentDto.setInvestmentYears(5);
-    this.initialInvestmentDto.setInitialInvestment(Float.valueOf(21f));
+    this.initialInvestmentDto.setInitialInvestment(21d);
     
     //crea controlador con su dependenia de una calculadora
   //  this.controller = new AplicationController(this.calculator);
@@ -75,10 +76,10 @@ private CompoundInterestCalculator calculator;
     
     InvestmentYieldDto firstYear=tableYield.get(0);
     
-    assertEquals((5000.00),firstYear.getInitialInvestment());
-    assertEquals((3000.00),firstYear.getYearInput());
-    assertEquals((1680.00),firstYear.getInvestmentYield());
-    assertEquals((9680.00),firstYear.getFinalBalance());
+    assertEquals(Double.valueOf(5000.00),firstYear.getInitialInvestment());
+    assertEquals(Double.valueOf(3000.00),firstYear.getYearInput());
+    assertEquals(Double.valueOf(1680.00),firstYear.getInvestmentYield());
+    assertEquals(Double.valueOf(9680.00),firstYear.getFinalBalance());
   }
 
 }
